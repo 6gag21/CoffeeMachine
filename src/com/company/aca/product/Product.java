@@ -5,11 +5,12 @@ import com.company.aca.model.CoffeeModel;
 import com.company.aca.numberPanel.Panel;
 
 public  abstract class Product {
-    long id;
-    int price;
-    String name;
-   static Panel m;
-   static CoffeeModel c;
+    private long id;
+     int price;
+   private String name;
+   private  Panel m;
+   private  CoffeeModel c;
+ public abstract void  prepare(Panel m);
 
     Product(long id, int price, String name, Panel m,CoffeeModel c){
         this.id=id;
@@ -19,6 +20,5 @@ public  abstract class Product {
         this.c = c;
     }
     Product(){};
-   public  abstract void prepare(Panel m);
 
 }

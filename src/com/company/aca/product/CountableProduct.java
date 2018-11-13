@@ -1,4 +1,11 @@
 package com.company.aca.product;
 
-public class CountableProduct {
+import com.company.aca.numberPanel.Panel;
+
+public class CountableProduct extends Product {
+
+    @Override
+    public void prepare(Panel m) {
+
+    }
 }

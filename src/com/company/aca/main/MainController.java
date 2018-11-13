@@ -1,6 +1,7 @@
 package com.company.aca.main;
 
 import com.company.aca.Main;
+import com.company.aca.PrepareThread;
 import com.company.aca.coinreader.CoinReader;
 import com.company.aca.display.Display;
 import com.company.aca.numberPanel.Panel;
@@ -14,10 +15,10 @@ import java.util.Scanner;
 
 
 public class MainController {
-    static int insertedAmount = 0;
-    static CoinReader cr = new CoinReader();
-    static Scanner sc = new Scanner(System.in);
-    static private int balance;
+    private static int insertedAmount = 0;
+    private static CoinReader cr = new CoinReader();
+    private static Scanner sc = new Scanner(System.in);
+    private static  int balance;
 
     public static void start() {
 
@@ -50,7 +51,7 @@ public class MainController {
 
     }
 
-    public static boolean panelEquals(String st) {
+    private static boolean panelEquals(String st) {
         for (Panel panel : Panel.values()) {
             if (st.equals(panel.name())) {
                 return true;
