@@ -6,10 +6,10 @@ import com.company.aca.numberPanel.Panel;
 
 public  abstract class Product {
     private long id;
-     int price;
-   private String name;
-   private  Panel m;
-   private  CoffeeModel c;
+    int price;
+    String name;
+   private    Panel m;
+   private    CoffeeModel c;
  public abstract void  prepare(Panel m);
 
     Product(long id, int price, String name, Panel m,CoffeeModel c){
@@ -19,6 +19,6 @@ public  abstract class Product {
         this.m = m;
         this.c = c;
     }
-    Product(){};
+     Product(){}
 
 }

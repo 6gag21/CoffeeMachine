@@ -6,7 +6,7 @@ private final int waterAmount;
 private final int milkAmount;
 private final int creamAmount;
 
-public CoffeeModel(int coffeeAmount, int waterAmount, int milkAmount, int creamAmount){
+ CoffeeModel(int coffeeAmount, int waterAmount, int milkAmount, int creamAmount){
     this.coffeeAmount = coffeeAmount;
     this.waterAmount = waterAmount;
     this.milkAmount = milkAmount;

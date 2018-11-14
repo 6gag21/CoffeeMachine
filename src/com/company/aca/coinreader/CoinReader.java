@@ -1,5 +1,6 @@
 package com.company.aca.coinreader;
 
+
 import com.company.aca.display.Display;
 
 import java.util.HashSet;
@@ -20,6 +21,7 @@ public class CoinReader {
 
 
     public  int readCoin(int amount){
+        Display display = new Display();
         for(Integer i: coins){
             if (amount==i){
             return amount;
@@ -27,7 +29,7 @@ public class CoinReader {
 
 
             }
-        Display.print("Invalid coin");
+        display.print("Invalid coin\n");
         return 0;
         }
 

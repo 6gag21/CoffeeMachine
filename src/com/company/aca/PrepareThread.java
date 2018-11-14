@@ -5,26 +5,27 @@ import com.company.aca.display.Display;
 
 
 public class PrepareThread extends Thread {
+    private Display display = new Display();
     public void run(){
-        Display.print2("Prepairing");
+        display.print("Prepairing");
         try {
             sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        Display.print2(".");
+        display.print(".");
         try {
             sleep(500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        Display.print2(".");
+        display.print(".");
         try {
             sleep(500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        Display.print(".");
+        display.print(".\n");
         try {
             sleep(500);
         } catch (InterruptedException e) {

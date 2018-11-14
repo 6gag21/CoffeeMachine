@@ -9,17 +9,17 @@ public class Ingredients {
    public  static final String INGREDIENT_SUGAR = "Sugar";
    public  static final String INGREDIENT_CREAM = "Cream";
 
-   private static   Ingredients instance;
+   private static  Ingredients instance;
    private Ingredients(){}
 
-   public static Ingredients getInstance(){
+    static Ingredients getInstance(){
       if(instance == null){
          instance = new Ingredients();
       }
       return instance;
    }
 
-   HashMap<String,Integer> ingredients = new HashMap<>(){{
+   private HashMap<String,Integer> ingredients = new HashMap<>(){{
       put(INGREDIENT_COFFEE,1000);
       put(INGREDIENT_MILK,2000);
       put(INGREDIENT_CREAM,1000);
@@ -27,7 +27,7 @@ public class Ingredients {
       put(INGREDIENT_SUGAR,1000);
    }};
 
-   public HashMap<String, Integer> getIngredient() {
+    HashMap<String, Integer> getIngredient() {
       return ingredients;
    }
 }
