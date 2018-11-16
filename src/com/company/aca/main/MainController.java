@@ -10,7 +10,7 @@ import com.company.aca.product.MakeableProduct;
 import java.util.Scanner;
 
 
-public  class MainController {
+public class MainController {
 
     private int insertedAmount = 0;
     private CoinReader cr = new CoinReader();
@@ -18,22 +18,26 @@ public  class MainController {
     private int balance = 0;
     private Display display = new Display();
 
-    public  void start() {
+    public void start() {
         MakeableProduct product = new MakeableProduct();
         MainController mainController = new MainController();
+
         display.print("Please insert coin\n");
         insertedAmount += cr.readCoin(sc.nextInt());
-        if(insertedAmount==0){
+
+        if (insertedAmount == 0) {
             mainController.start();
         }
+
         display.print("Amount: " + Integer.toString(insertedAmount) + "\n");
         display.print("Choose product\n");
         String st = sc.next();
+
         if (!panelEquals(st)) {
             mainController.start();
         }
 
-        if (insertedAmount >=  product.getPrice(Panel.valueOf(st))) {
+        if (insertedAmount >= product.getPrice(Panel.valueOf(st))) {
             try {
                 product.prepare(Panel.valueOf(st));
             } catch (NullPointerException e) {
@@ -42,7 +46,7 @@ public  class MainController {
                 mainController.start();
             }
             display.print("Maked\n" + "Take your " + product.getName(Panel.valueOf(st)) + "\n");
-            if (insertedAmount >  product.getPrice(Panel.valueOf(st))) {
+            if (insertedAmount > product.getPrice(Panel.valueOf(st))) {
                 int change = insertedAmount - product.getPrice(Panel.valueOf(st));
                 display.print("Your change: " + change + "\n");
                 insertedAmount -= change;
@@ -50,16 +54,14 @@ public  class MainController {
             balance += insertedAmount;
             insertedAmount = 0;
             mainController.start();
+
         } else {
             display.print("Not enough amount\n");
             mainController.start();
-
         }
-
-
-
     }
-    private boolean panelEquals(String st){
+
+    private boolean panelEquals(String st) {
         for (Panel panel : Panel.values()) {
             if (st.equals(panel.name())) {
                 return true;

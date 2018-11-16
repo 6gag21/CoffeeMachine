@@ -5,7 +5,8 @@ public class Cappuccino extends CoffeeModel {
     private static final int water = 100;
     private static final int milk = 50;
     private static final int cream = 10;
-    public  Cappuccino(){
-        super(coffee,water,milk,cream);
+
+    public Cappuccino() {
+        super(coffee, water, milk, cream);
     }
 }
