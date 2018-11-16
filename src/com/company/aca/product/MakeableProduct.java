@@ -52,7 +52,6 @@ public class MakeableProduct extends Product {
         return null;
     }
 
-
     public void prepare(Panel m) {
         PrepareThread thread1 = new PrepareThread();
         CoffeeMaker coffeeMaker = new CoffeeMaker();
